@@ -147,6 +147,32 @@ const columnsVagaHis: GridColDef[] = [
 
 const rowsVagaHis = [];
 
+const columnsCandidateHis: GridColDef[] = [
+  { field: "Cliente", headerName: "Cliente", width: 70 },
+  { field: "WEB", headerName: "WEB", width: 70 },
+  { field: "Cargo", headerName: "Cargo", width: 70 },
+  { field: "Contato/Pré.	", headerName: "Contato/Pré.", width: 70 },
+  { field: "Entrevistado", headerName: "Entrevistado", width: 130 },
+  { field: "retorno", headerName: "Retorno Cliente", width: 130 },
+];
+const rowsCandidateHis = [];
+
+const columnsFastSelectCan: GridColDef[] = [
+  { field: "Inclusão", headerName: "Inclusão", width: 70 },
+  { field: "Alteração", headerName: "Alteração", width: 70 },
+  { field: "Código", headerName: "Código", width: 70 },
+  { field: "Nome", headerName: "Nome", width: 70 },
+  { field: "Idade", headerName: "Idade", width: 130 },
+  { field: "Sexo", headerName: "Sexo", width: 130 },
+  { field: "Cargo", headerName: "Cargo", width: 70 },
+  { field: "Escolaridade", headerName: "Escolaridade", width: 70 },
+  { field: "P/Salario", headerName: "P/Salario", width: 70 },
+  { field: "Estado", headerName: "Estado", width: 70 },
+  { field: "Cidade", headerName: "Cidade", width: 130 },
+  { field: "Bairro", headerName: "Bairro", width: 130 },
+];
+const rowsFastSelectCan = [];
+
 export default function app() {
   return (
     <div style={{ height: 400, width: "800px", margin: "auto" }}>
@@ -257,6 +283,20 @@ export default function app() {
       <DataGrid
         rows={rowsVagaHis}
         columns={columnsVagaHis}
+        pageSize={5}
+        rowsPerPageOptions={[5]}
+        checkboxSelection
+      />
+      <DataGrid
+        rows={rowsCandidateHis}
+        columns={columnsCandidateHis}
+        pageSize={5}
+        rowsPerPageOptions={[5]}
+        checkboxSelection
+      />
+      <DataGrid
+        rows={rowsFastSelectCan}
+        columns={columnsFastSelectCan}
         pageSize={5}
         rowsPerPageOptions={[5]}
         checkboxSelection
