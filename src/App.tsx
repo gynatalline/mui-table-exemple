@@ -173,6 +173,24 @@ const columnsFastSelectCan: GridColDef[] = [
 ];
 const rowsFastSelectCan = [];
 
+//clients contatos e telefones
+
+const columnsTell: GridColDef[] = [
+  { field: "contato", headerName: "Contato", width: 70 },
+  { field: "ddd", headerName: "DDD", width: 130 },
+  { field: "telefone", headerName: "Telefone", width: 130 },
+  { field: "whats/sms", headerName: "Whats/SMS", width: 90 },
+];
+
+const rowsTell = [];
+
+const columnsContatosTell: GridColDef[] = [
+  { field: "nome", headerName: "Nome", width: 70 },
+  { field: "aniver", headerName: "Aniver", width: 130 },
+  { field: "funcçao", headerName: "Funcção", width: 130 },
+  { field: "email", headerName: "E-mail", width: 90 },
+];
+const rowsContatosTell = [];
 export default function app() {
   return (
     <div style={{ height: 400, width: "800px", margin: "auto" }}>
@@ -297,6 +315,20 @@ export default function app() {
       <DataGrid
         rows={rowsFastSelectCan}
         columns={columnsFastSelectCan}
+        pageSize={5}
+        rowsPerPageOptions={[5]}
+        checkboxSelection
+      />
+      <DataGrid
+        rows={rowsTell}
+        columns={columnsTell}
+        pageSize={5}
+        rowsPerPageOptions={[5]}
+        checkboxSelection
+      />
+      <DataGrid
+        rows={rowsContatosTell}
+        columns={columnsContatosTell}
         pageSize={5}
         rowsPerPageOptions={[5]}
         checkboxSelection
